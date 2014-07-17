@@ -76,3 +76,44 @@ console.log(
         }
     } )()
 );
+
+console.log(repeat(3, function() {
+   console.log('Hello');
+}));
+
+function repeat (num, fn) {
+    var i, value;
+
+    for (i = 1;i <= num;++i)
+        value = fn(i);
+
+    return value;
+}
+
+function plus(a,b) {
+    return arguments[0] + arguments[1];
+}
+
+console.log(plus(2,3));
+
+function whichArgs(a,b,c) {
+    return arguments;
+}
+
+console.log(whichArgs(2,3,4));
+
+
+function plusSin()
+{
+    return arguments[0] + arguments[1];
+}
+
+console.log(plusSin(1,2));
+
+function howManyArgs() {
+    return arguments['length'];
+}
+
+console.log(howManyArgs());
+console.log(howManyArgs(1,2));
+console.log(howManyArgs(3,4,5,function(){}));
